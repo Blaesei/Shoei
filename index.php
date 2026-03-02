@@ -1,0 +1,661 @@
+<?php
+/* ============================================================
+   QUINN HARVEY PINEDA — AI/ML Portfolio
+   index.php  ·  Entry point
+   ============================================================ */
+
+$name     = "Quinn Harvey G. Pineda";
+$role     = "AI & Machine Learning Engineer";
+$email    = "qhp.quinn@gmail.com";
+$phone    = "+63 939 842 8449";
+$linkedin = "https://linkedin.com/in/quinn-pineda";
+$github   = "https://github.com/Blaesei";
+$twitter  = "https://twitter.com/";   // Update with real handle
+$cv_file  = "QuinnHarvey_Pineda_Resume.pdf"; // Replace with actual CV path
+?>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<?= $name ?> – AI & ML Engineer. Specializing in machine learning pipelines, deep learning, OCR systems, and real-time AI applications.">
+  <title><?= $name ?> — AI/ML Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── ENVIRONMENT LAYERS ── -->
+<div class="grid-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- CERTIFICATIONS WATERMARK BACKGROUND -->
+<div class="cert-watermark" id="certWatermark" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════
+     NAVIGATION
+     ════════════════════════════════════ -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">Q<span>H</span>P</a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#demo">Live Demos</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="<?= $github ?>" target="_blank">GitHub</a></li>
+    <li>
+      <a href="<?= $cv_file ?>" download class="nav-cta">↓ Resume</a>
+    </li>
+    <li>
+      <!-- Day / Night Toggle -->
+      <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode" aria-label="Toggle theme">
+        <div class="theme-toggle-thumb" id="themeIcon">☀️</div>
+      </button>
+    </li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:14px;">
+    <!-- Mobile toggle visible inline -->
+    <button class="theme-toggle" id="themeToggleMobile" title="Toggle theme" aria-label="Toggle theme"
+      style="display:none" onclick="document.getElementById('themeToggle').click()">
+      <div class="theme-toggle-thumb">☀️</div>
+    </button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════
+     HERO
+     ════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+
+    <!-- Far Left: Photo -->
+    <div class="hero-photo-col">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-ring hero-photo-ring-1"></div>
+        <div class="hero-photo-ring hero-photo-ring-2"></div>
+        <div class="hero-photo-inner">
+          <!-- Replace src with your photo path e.g. "assets/quinn.jpg" -->
+          <img src="quinn.jpg" alt="Quinn Harvey G. Pineda">
+        </div>
+        <div class="hero-photo-badge">
+          <span class="hero-photSo-badge-dot"></span>
+          Available
+        </div>
+      </div>
+    </div>
+
+    <!-- Center: Content -->
+    <div class="hero-content">
+      <div class="hero-tag">Available for opportunities</div>
+      <h1>
+        Quinn Harvey<br>
+        <span class="accent">Pineda</span><br>
+        <span class="dim" style="font-size: 35px;">AI/ML Engineer</span>
+      </h1>
+      <p class="hero-desc">
+        Building intelligent systems that <strong>automate, predict, and solve</strong>
+        real-world problems. Specializing in machine learning pipelines, deep learning,
+        and AI-powered applications — from enterprise OCR systems to real-time pose detection.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          View Projects
+        </a>
+        <a href="<?= $github ?>" target="_blank" class="btn-secondary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+      <div class="hero-stats">
+        
+      </div>
+    </div>
+
+    <!-- Right: Neural Network Canvas -->
+    <div class="hero-visual">
+      <div style="width:100%;max-width:460px;height:380px;position:relative;">
+        <canvas id="neuralCanvas" style="width:100%;height:100%;border-radius:16px;"></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     EXPERIENCE
+     ════════════════════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Experience</div>
+    <h2>Work History</h2>
+    <p class="section-desc">Real-world impact — delivering intelligent systems for enterprise environments.</p>
+
+    <div class="exp-card reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Cornersteel Systems Corporation — Comfac IT</div>
+          <div class="exp-role">// Machine Learning Operations Engineer Intern</div>
+        </div>
+        <div class="exp-date">Jul 2025 – Sep 2025 · Mandaluyong, PH</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Developed <strong>Archive</strong> — an AI-powered document management system integrating OCR and LLMs, automating processing of <strong>1,000+ files per hour</strong> for enterprise use.</li>
+        <li>Optimized ML pipelines with <strong>parallel processing</strong> and cost-efficient model deployment, cutting processing time from <strong>250s → 55s per file</strong> while maintaining 95% accuracy.</li>
+        <li>Deployed and fine-tuned open-source AI models (Qwen 2-VL, EasyOCR, Llama) to <strong>replace costly APIs</strong>, eliminating 100% of API expenses without quality loss.</li>
+      </ul>
+      <div class="exp-kpis">
+        <div class="kpi"><div class="kpi-val">1,000+</div><div class="kpi-label">Files / Hour</div></div>
+        <div class="kpi"><div class="kpi-val">78%</div><div class="kpi-label">Speed Gain</div></div>
+        <div class="kpi"><div class="kpi-val">95%</div><div class="kpi-label">Accuracy</div></div>
+        <div class="kpi"><div class="kpi-val">$0</div><div class="kpi-label">API Costs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     PROJECTS
+     ════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header-row">
+      <div>
+        <div class="section-label">Projects</div>
+        <h2>Selected Work</h2>
+        <p class="section-desc">From predictive models to embedded systems — solving real problems with data and code.</p>
+      </div>
+      <div class="project-filter">
+        <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
+        <button class="filter-btn" onclick="filterProjects('ml',this)">ML</button>
+        <button class="filter-btn" onclick="filterProjects('dl',this)">Deep Learning</button>
+        <button class="filter-btn" onclick="filterProjects('iot',this)">IoT</button>
+        <button class="filter-btn" onclick="filterProjects('fullstack',this)">Full Stack</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- SPOTBRO (featured) -->
+      <div class="project-card featured reveal" data-cat="fullstack ml">
+        <div class="project-top">
+          <div class="project-icon">🏋️</div>
+          <span class="project-type fullstack">Full Stack + ML</span>
+        </div>
+        <h3 class="project-title">SpotBro — AI Fitness Form Coach</h3>
+        <p class="project-problem">Real-time biomechanical analysis coaching users on workout form. Extracts 16 features per frame via MediaPipe pose detection, implements a state machine for rep counting, and tracks analytics across sessions with a full-stack dashboard.</p>
+        <div class="project-result">
+          <div><div class="project-result-label">Accuracy</div><div class="project-result-val">85%+ form accuracy · Full-stack analytics</div></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">PHP</span><span class="tag">Python</span><span class="tag">MediaPipe</span>
+          <span class="tag">MySQL</span><span class="tag">JSON</span><span class="tag">ML Classification</span>
+        </div>
+        <div class="project-links">
+          <a href="<?= $github ?>" target="_blank" class="project-link">↗ GitHub</a>
+          <a href="#demo" class="project-link">▶ Live Demo</a>
+        </div>
+      </div>
+
+      <!-- Pneumonia Detection -->
+      <div class="project-card reveal" data-cat="dl">
+        <div class="project-top">
+          <div class="project-icon">🫁</div>
+          <span class="project-type dl">Deep Learning</span>
+        </div>
+        <h3 class="project-title">Pneumonia Detection from Chest X-Rays</h3>
+        <p class="project-problem">MobileNetV2-based CNN classifier for chest X-ray analysis with data augmentation (rotation, zoom, flip) for improved generalization on imbalanced medical imaging data.</p>
+        <div class="project-result">
+          <div class="project-result-label">Result</div>
+          <div class="project-result-val">87.66% accuracy</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">MobileNetV2</span>
+        </div>
+        <div class="project-links">
+          <a href="<?= $github ?>" target="_blank" class="project-link">↗ GitHub</a>
+        </div>
+      </div>
+
+      <!-- AQI -->
+      <div class="project-card reveal" data-cat="ml">
+        <div class="project-top">
+          <div class="project-icon">🌬️</div>
+          <span class="project-type ml">ML</span>
+        </div>
+        <h3 class="project-title">Air Quality Prediction — Philippine Cities</h3>
+        <p class="project-problem">Multi-model AQI predictor benchmarking Linear Regression, Decision Tree, Random Forest, and XGBoost. Data balanced via RandomUnderSampler with results visualized in Matplotlib/Seaborn.</p>
+        <div class="project-result">
+          <div class="project-result-label">Best R²</div>
+          <div class="project-result-val">0.51 (XGBoost)</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">imbalanced-learn</span>
+        </div>
+        <div class="project-links">
+          <a href="<?= $github ?>" target="_blank" class="project-link">↗ GitHub</a>
+          <a href="#demo" class="project-link">▶ Try Demo</a>
+        </div>
+      </div>
+
+      <!-- Socioeconomic -->
+      <div class="project-card reveal" data-cat="ml">
+        <div class="project-top">
+          <div class="project-icon">🌍</div>
+          <span class="project-type ml">Data Analysis</span>
+        </div>
+        <h3 class="project-title">Global Socioeconomic Correlation Analysis</h3>
+        <p class="project-problem">Multi-variable correlation analysis across GDP, life expectancy, education, and fertility rates globally. Produced heatmaps, scatter matrices, and trend visualizations across 100+ countries.</p>
+        <div class="project-result">
+          <div class="project-result-label">Dataset</div>
+          <div class="project-result-val">100+ Countries Analyzed</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span>
+        </div>
+        <div class="project-links">
+          <a href="<?= $github ?>" target="_blank" class="project-link">↗ GitHub</a>
+        </div>
+      </div>
+
+      <!-- Sniff My Fridge -->
+      <div class="project-card reveal" data-cat="iot">
+        <div class="project-top">
+          <div class="project-icon">🌡️</div>
+          <span class="project-type iot">IoT / Embedded</span>
+        </div>
+        <h3 class="project-title">Sniff-My-Fridge — Smart Spoilage Detector</h3>
+        <p class="project-problem">ESP32-based food spoilage detection system using MQ135 gas and humidity sensors. Calibrated sensor to reduce false positives from non-food gases. Built as a team collaboration project.</p>
+        <div class="project-result">
+          <div class="project-result-label">Hardware</div>
+          <div class="project-result-val">ESP32 + MQ135 + DHT22</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">Arduino</span><span class="tag">MQ135</span>
+        </div>
+        <div class="project-links">
+          <a href="<?= $github ?>" target="_blank" class="project-link">↗ GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     LIVE DEMOS
+     ════════════════════════════════════ -->
+<section id="demo">
+  <div class="container">
+    <div class="section-label">Interactive</div>
+    <h2>Live Demos</h2>
+    <p class="section-desc">Try the models directly in your browser — no setup required.</p>
+
+    <div class="demo-wrapper">
+
+      <!-- AQI Predictor -->
+      <div class="demo-card reveal">
+        <div class="demo-header">
+          <div class="demo-dots"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+          <div class="demo-title-bar">aqi_predictor.py — interactive</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-live-badge">Live Demo</div>
+          <h3>🌬️ AQI Predictor</h3>
+          <p>Simulate the Air Quality Prediction model. Enter sensor values to get a predicted AQI category based on the trained XGBoost ensemble.</p>
+          <div class="mini-demo">
+            <div class="demo-input-row">
+              <div class="demo-input-group">
+                <label>PM2.5 (μg/m³)</label>
+                <input type="number" id="pm25" placeholder="35.4" value="35.4" min="0" max="500">
+              </div>
+              <div class="demo-input-group">
+                <label>PM10 (μg/m³)</label>
+                <input type="number" id="pm10" placeholder="54.2" value="54.2" min="0" max="600">
+              </div>
+              <div class="demo-input-group">
+                <label>NO₂ (ppb)</label>
+                <input type="number" id="no2" placeholder="28.1" value="28.1" min="0" max="200">
+              </div>
+              <div class="demo-input-group">
+                <label>SO₂ (ppb)</label>
+                <input type="number" id="so2" placeholder="5.3" value="5.3" min="0" max="100">
+              </div>
+            </div>
+            <button class="demo-run-btn" onclick="runAQI()">▶ Run Prediction</button>
+            <div class="demo-result-box" id="aqiResult">
+              <div class="result-placeholder">Enter values above and run prediction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SpotBro Demo -->
+      <div class="demo-card reveal">
+        <div class="demo-header">
+          <div class="demo-dots"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+          <div class="demo-title-bar">spotbro_analyzer.py — form coach</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-live-badge">Interactive Preview</div>
+          <h3>🏋️ SpotBro Form Analyzer</h3>
+          <p>Demonstrates the biomechanical feature extraction pipeline. Select an exercise and simulate MediaPipe keypoint analysis for rep counting and form scoring.</p>
+          <div class="pose-demo">
+            <div class="exercise-select">
+              <button class="ex-btn active" onclick="selectEx('squat',this)">Squat</button>
+              <button class="ex-btn" onclick="selectEx('pushup',this)">Push-up</button>
+              <button class="ex-btn" onclick="selectEx('curl',this)">Bicep Curl</button>
+              <button class="ex-btn" onclick="selectEx('press',this)">Shoulder Press</button>
+            </div>
+            <div id="posePlaceholder" class="pose-placeholder">
+              <div class="pose-placeholder-inner">
+                <div class="pose-icon">🤸</div>
+                <div>Click to upload a pose image<br><small style="color:var(--text-faint)">or use simulate below</small></div>
+              </div>
+              <input type="file" accept="image/*" onchange="handlePoseUpload(this)">
+            </div>
+            <button class="pose-analyze-btn" onclick="simulatePose()">⚡ Simulate Analysis</button>
+            <div class="pose-result">
+              <div class="pose-metric"><div class="pose-metric-val" id="formScore">—</div><div class="pose-metric-label">Form Score</div></div>
+              <div class="pose-metric"><div class="pose-metric-val" id="repCount">—</div><div class="pose-metric-label">Reps</div></div>
+              <div class="pose-metric"><div class="pose-metric-val" id="jointAngle">—</div><div class="pose-metric-label">Knee Angle</div></div>
+              <div class="pose-metric"><div class="pose-metric-val" id="formFeedback">—</div><div class="pose-metric-label">Feedback</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     SKILLS
+     ════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Technical Skills</div>
+    <h2>Toolbox</h2>
+    <p class="section-desc">Languages, frameworks, and tools used to build intelligent systems from the ground up.</p>
+
+    <div class="skills-grid reveal">
+      <div class="skill-group">
+        <div class="skill-group-label">Core</div>
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-items">
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Python</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Java</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>C++</span>
+          <span class="skill-chip"><span class="dot dot-purple"></span>SQL</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>PHP</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>HTML / CSS</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>JavaScript</span>
+          <span class="skill-chip"><span class="dot dot-red"></span>R</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>JSON</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">AI / Data Science</div>
+        <div class="skill-group-title">ML &amp; Deep Learning</div>
+        <div class="skill-items">
+          <span class="skill-chip"><span class="dot dot-cyan"></span>TensorFlow</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Keras</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Scikit-learn</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>XGBoost</span>
+          <span class="skill-chip"><span class="dot dot-purple"></span>MediaPipe</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>Pandas</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>NumPy</span>
+          <span class="skill-chip"><span class="dot dot-red"></span>Matplotlib</span>
+          <span class="skill-chip"><span class="dot dot-red"></span>Seaborn</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Infrastructure</div>
+        <div class="skill-group-title">Tools &amp; Deployment</div>
+        <div class="skill-items">
+          <span class="skill-chip"><span class="dot dot-amber"></span>Docker</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Git / GitHub</span>
+          <span class="skill-chip"><span class="dot dot-purple"></span>VS Code</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>EasyOCR</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>LLM APIs</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>MySQL</span>
+          <span class="skill-chip"><span class="dot dot-red"></span>AutoCAD</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>KiCAD</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Models Deployed</div>
+        <div class="skill-group-title">Open-Source AI</div>
+        <div class="skill-items">
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Qwen 2-VL</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Llama</span>
+          <span class="skill-chip"><span class="dot dot-purple"></span>MobileNetV2</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>EasyOCR</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>MediaPipe Pose</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Techniques</div>
+        <div class="skill-group-title">ML Methods</div>
+        <div class="skill-items">
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Transfer Learning</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>Data Augmentation</span>
+          <span class="skill-chip"><span class="dot dot-purple"></span>Ensemble Methods</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>Imbalanced Learning</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>OCR Pipelines</span>
+          <span class="skill-chip"><span class="dot dot-green"></span>Pose Estimation</span>
+          <span class="skill-chip"><span class="dot dot-red"></span>EDA / Visualization</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Productivity</div>
+        <div class="skill-group-title">Workspace</div>
+        <div class="skill-items">
+          <span class="skill-chip"><span class="dot dot-green"></span>Google Workspace</span>
+          <span class="skill-chip"><span class="dot dot-cyan"></span>MS Office</span>
+          <span class="skill-chip"><span class="dot dot-amber"></span>Jupyter Notebooks</span>
+          <span class="skill-chip"><span class="dot dot-purple"></span>Notion</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div style="margin-top:64px;">
+      <div class="section-label">Certifications</div>
+      <h2 style="font-size:clamp(1.5rem,2.5vw,2rem);">Credentials</h2>
+      <div class="certs-row reveal">
+        <div class="cert-card">
+          <div class="cert-icon">🏅</div>
+          <div><div class="cert-name">NC II — Computer Systems Servicing</div><div class="cert-issuer">TESDA · Oct 2024</div></div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🏅</div>
+          <div><div class="cert-name">NC II — Mechatronics Servicing</div><div class="cert-issuer">TESDA · Jul 2025</div></div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🐍</div>
+          <div><div class="cert-name">Python Fundamentals for Beginners</div><div class="cert-issuer">Great Learning · Oct 2024</div></div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">💻</div>
+          <div><div class="cert-name">Programming Basics</div><div class="cert-issuer">Great Learning · Oct 2024</div></div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🌐</div>
+          <div><div class="cert-name">Introduction to JavaScript</div><div class="cert-issuer">Great Learning · Nov 2023</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     EDUCATION
+     ════════════════════════════════════ -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Education</div>
+    <h2>Background</h2>
+    <p class="section-desc">Knowledge foundation built across institutions in Metro Manila — from STEM to Computer Engineering.</p>
+
+    <!-- PUP -->
+    <div class="edu-card reveal">
+      <div class="edu-photo-wrap">
+        <!-- Replace with: src="assets/pup.jpg" or any image path -->
+        <img
+          src="PUP_Logo.svg"
+          alt="Polytechnic University of the Philippines — Sta. Mesa Campus"
+          class="edu-photo"
+          onerror="this.style.display='none';this.parentElement.querySelector('.edu-photo-fallback').style.display='flex'">
+        <div class="edu-photo-fallback">
+          <div class="edu-fallback-initials">PUP</div>
+          <div class="edu-fallback-sub">Polytechnic University<br>of the Philippines</div>
+        </div>
+        <div class="edu-photo-overlay">
+          <span class="edu-photo-label">PUP · Sta. Mesa, Manila</span>
+        </div>
+      </div>
+      <div class="edu-info">
+        <div class="edu-school">Polytechnic University of the Philippines — ITech</div>
+        <div class="edu-degree">// Diploma in Computer Engineering Technology (DCpET)</div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:8px 0 14px;line-height:1.6;">
+          Sta. Mesa, Manila, PH &nbsp;·&nbsp; Sep 2023 – Present (Exp. 2026)
+        </p>
+        <div class="edu-meta">
+          <span class="edu-badge">Specialization: Machine Learning</span>
+          <span class="edu-badge">ROTC Completed</span>
+          <span class="edu-badge">NSTP Completed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NSDGA SHS -->
+    <div class="edu-card reveal">
+      <div class="edu-photo-wrap">
+        <!-- Replace with: src="assets/nsdga.jpg" or any image path -->
+        <img
+          src="nsdga_logo.png"
+          alt="Nuestra Señora De Guia Academy of Marikina — SHS Campus"
+          class="edu-photo"
+          onerror="this.style.display='none';this.parentElement.querySelector('.edu-photo-fallback').style.display='flex'">
+        <div class="edu-photo-fallback">
+          <div class="edu-fallback-initials">NSDGA</div>
+          <div class="edu-fallback-sub">Nuestra Señora<br>De Guia Academy</div>
+        </div>
+        <div class="edu-photo-overlay">
+          <span class="edu-photo-label">NSDGA · Nangka, Marikina</span>
+        </div>
+      </div>
+      <div class="edu-info">
+        <div class="edu-school">Nuestra Señora De Guia Academy of Marikina — SHS</div>
+        <div class="edu-degree">// Science, Technology, Engineering, Mathematics (STEM)</div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:8px 0 14px;line-height:1.6;">
+          Nangka, Marikina City, PH &nbsp;·&nbsp; 2021 – 2023
+        </p>
+        <div class="edu-meta">
+          <span class="edu-badge edu-badge-gold">🏅 With Honors</span>
+          <span class="edu-badge">STEM Track</span>
+          <span class="edu-badge">Senior High School</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOOTER  (Contact as text)
+     ════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-top">
+      <!-- Brand / bio -->
+      <div class="footer-brand">
+        <div class="footer-brand-name">Q<span>H</span>P</div>
+        <div class="footer-brand-role">AI &amp; ML Engineer</div>
+        <p class="footer-brand-desc">
+          Building smart, data-driven solutions from PH.
+          Open to opportunities in machine learning, MLOps, and AI engineering. 
+        </p>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Contacts as plain text links (two columns like the reference) -->
+      <div class="footer-contacts">
+
+        <!-- Left column: Socials -->
+        <div class="footer-contact-col">
+          <a href="<?= $github ?>" target="_blank" class="footer-link">
+            <span class="footer-link-icon">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </span>
+            <span class="footer-link-label">GitHub</span>
+          </a>
+          <a href="<?= $linkedin ?>" target="_blank" class="footer-link">
+            <span class="footer-link-icon">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
+            <span class="footer-link-label">LinkedIn</span>
+          </a>
+        </div>
+
+        <!-- Right column: Actions -->
+        <div class="footer-contact-col footer-col-right">
+          <a href="<?= $cv_file ?>" download class="footer-link">
+            <span class="footer-link-label">View CV</span>
+            <span class="footer-link-icon">↓</span>
+          </a>
+          <a href="mailto:<?= $email ?>" class="footer-link">
+            <span class="footer-link-label">Email Me</span>
+            <span class="footer-link-icon">✉</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; <?= date('Y') ?> Quinn Harvey G. Pineda &nbsp;·&nbsp;</div>
+      <div class="footer-bottom-links">
+        <a href="#hero">Back to Top ↑</a>
+        <a href="mailto:<?= $email ?>">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Back to top -->
+<a href="#hero" class="back-to-top" id="backToTop" title="Back to top">↑</a>
+
+<!-- Scripts (loaded last for performance) -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
